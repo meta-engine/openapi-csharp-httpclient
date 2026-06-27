@@ -2,6 +2,13 @@
 
 See the [NuGet versions page](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool#versions-body-tab) for the full version history.
 
+## 1.0.1
+
+- **`--options-threshold` now changes the generated code.** Once an operation reaches the
+  threshold parameter count (default `4`), its query and header parameters are grouped into a
+  single options object instead of separate method arguments. In `1.0.0` the flag was accepted
+  but had no effect on the generated output.
+
 ## 1.0.0
 
 - Initial release — C# code generation from OpenAPI specifications, distributed as a dotnet tool
