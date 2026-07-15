@@ -2,6 +2,20 @@
 
 See the [NuGet versions page](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool#versions-body-tab) for the full version history.
 
+## 1.0.2
+
+### Features
+
+- **Spec defaults become C# default arguments.** A required parameter that carries a schema `default` now surfaces it as a method default argument — e.g. `FindPetsByStatusAsync(PetStatus status = PetStatus.Available, ...)` — so callers can omit it. Optional parameters keep their `Type? x = null` omit-from-wire semantics.
+
+### Bug Fixes
+
+- **`oneOf`/`anyOf` unions now deserialize at runtime.** Undiscriminated unions — the Stripe-style expandable pattern (`anyOf [string, $ref, ...]`), object-vs-object `oneOf` with no discriminator, and `oneOf` over string enums — previously generated a bare marker interface with no converter, so any response carrying such a field threw at deserialization. Each now generates a `System.Text.Json` converter (a synthesized string variant for the string arm, try-each object dispatch for the object arms).
+- **Overlapping union variants resolve to the right type.** When two object members of a union shared required-property sets, the converter returned the first match and could silently deserialize to the wrong variant. It now discriminates on the distinguishing property set.
+- **`--error-handling` keeps the success check for uncategorized status codes.** With error handling enabled, status codes that weren't explicitly categorized (400, 409, 422, 429 after retries, ...) fell through and the error body was deserialized as if it were a success payload. Those codes now surface as errors.
+- **`--documentation` comments bind to their member.** A property carrying both a doc comment and an attribute (e.g. with `--validation-annotations`) emitted the `/// <summary>` between the attribute and the property, leaving it orphaned. The doc comment now renders above the attributes.
+- **Consistent indentation in generated client methods.** Some service method bodies and brace-less `if` continuations were dedented; all generated client code is now uniformly indented.
+
 ## 1.0.1
 
 - **`--options-threshold` now changes the generated code.** Once an operation reaches the
