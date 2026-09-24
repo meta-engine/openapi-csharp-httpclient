@@ -2,6 +2,13 @@
 
 See the [NuGet versions page](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool#versions-body-tab) for the full version history.
 
+## 1.0.3
+
+### Bug Fixes
+
+- **Primitive schema references preserve JSON member names.** Properties that reference primitive schemas now carry `JsonPropertyName`, including required properties and names containing underscores or hyphens. Valid JSON payloads deserialize and round-trip with the default `System.Text.Json` settings.
+- **`--middleware` rejects missing base-address configuration.** Generated client registrations now use the configured `HttpClient.BaseAddress` and report a missing address when the client is constructed.
+
 ## 1.0.2
 
 ### Features
