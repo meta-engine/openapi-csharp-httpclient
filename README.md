@@ -8,13 +8,14 @@
 
 `HttpClient`-based services and `System.Text.Json` models — typed, with optional XML docs, DataAnnotations validation, retries, auth, and DI-ready middleware.
 
-> Distributed as a **.NET tool** — `dotnet tool install` and run it from the command line. No project reference, no MSBuild wiring; it uses the .NET SDK you already have.
+> Generate clients from the command line with the **.NET tool** or from C# with the **NuGet library**.
 
 ---
 
 ## Quick Links
 
-- **NuGet Package**: [MetaEngine.CSharp.OpenApi.HttpClient.Tool](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool)
+- [.NET tool on NuGet.org](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool)
+- [NuGet library](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient)
 - **Website**: [metaengine.eu](https://www.metaengine.eu)
 
 ---
@@ -35,6 +36,8 @@
 
 ## Installation
 
+### .NET tool
+
 ```bash
 # Global (available everywhere)
 dotnet tool install -g MetaEngine.CSharp.OpenApi.HttpClient.Tool
@@ -42,6 +45,20 @@ dotnet tool install -g MetaEngine.CSharp.OpenApi.HttpClient.Tool
 # Or pin it to a repo (local tool manifest)
 dotnet new tool-manifest        # once per repo
 dotnet tool install MetaEngine.CSharp.OpenApi.HttpClient.Tool
+```
+
+### NuGet library
+
+```bash
+dotnet add package MetaEngine.CSharp.OpenApi.HttpClient --version 1.1.0
+```
+
+Version 1.1.0 generates C# HttpClient operations for HTTP `QUERY` in OpenAPI 3.2, including JSON request bodies.
+
+```csharp
+using MetaEngine.CSharp.OpenApi.HttpClient;
+
+OpenApiCSharpHttpClientGeneration.Setup("api.yaml", "./Generated", "MyApp.Api").Execute();
 ```
 
 ---
@@ -137,6 +154,6 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 ## About This Repository
 
-This is the **documentation and issue tracking repository** for MetaEngine OpenAPI C# HttpClient. The package is published to [NuGet.org](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool).
+This repository hosts documentation and issue tracking for the MetaEngine OpenAPI C# HttpClient library and .NET tool.
 
 Source code is proprietary, but the package is free to use under the MIT license.

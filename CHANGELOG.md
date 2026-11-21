@@ -1,6 +1,14 @@
 # Changelog
 
-See the [NuGet versions page](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool#versions-body-tab) for the full version history.
+See the [NuGet library versions](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient#versions-body-tab) and [.NET tool versions](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool#versions-body-tab) for the full release history.
+
+## 1.1.0
+
+[`MetaEngine.CSharp.OpenApi.HttpClient`](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient/1.1.0)
+
+### Features
+
+- Generate C# HttpClient operations for HTTP QUERY in OpenAPI 3.2 specifications, including JSON request bodies.
 
 ## 1.0.3
 
