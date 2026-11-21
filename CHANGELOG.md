@@ -4,7 +4,7 @@ See the [NuGet library versions](https://www.nuget.org/packages/MetaEngine.CShar
 
 ## 1.1.0
 
-[`MetaEngine.CSharp.OpenApi.HttpClient`](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient/1.1.0)
+[`MetaEngine.CSharp.OpenApi.HttpClient`](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient/1.1.0) and [`MetaEngine.CSharp.OpenApi.HttpClient.Tool`](https://www.nuget.org/packages/MetaEngine.CSharp.OpenApi.HttpClient.Tool/1.1.0)
 
 ### Features
 

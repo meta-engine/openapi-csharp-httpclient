@@ -36,6 +36,8 @@
 
 ## Installation
 
+Version 1.1.0 of the .NET tool and NuGet library generates C# clients for HTTP `QUERY` operations in OpenAPI 3.2 specifications, including JSON request bodies.
+
 ### .NET tool
 
 ```bash
@@ -52,8 +54,6 @@ dotnet tool install MetaEngine.CSharp.OpenApi.HttpClient.Tool
 ```bash
 dotnet add package MetaEngine.CSharp.OpenApi.HttpClient --version 1.1.0
 ```
-
-Version 1.1.0 generates C# HttpClient operations for HTTP `QUERY` in OpenAPI 3.2, including JSON request bodies.
 
 ```csharp
 using MetaEngine.CSharp.OpenApi.HttpClient;
